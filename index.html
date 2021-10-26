@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="jp">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>小動物｜◆Oream◇</title>
+</head>
+<script>
+    window.onload = function() {
+        const loader_element = document.getElementById('loader_wrap');
+        window.setTimeout(function() {
+            loader_element.classList.add('loaded');
+        }, 1000);
+    };
+</script>
+<header class="header">
+    <div class="logo"><a href="https://oream.github.io/2021Fes/">◆Oream◇</a></div><!-- /.logo -->
+
+    <!-- ハンバーガーメニュー部分 -->
+    <div class="drawer">
+
+        <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+        <input type="checkbox" id="drawer-check" class="drawer-hidden">
+
+        <!-- ハンバーガーアイコン -->
+        <label for="drawer-check" class="drawer-open"><span></span></label>
+
+        <!-- メニュー -->
+        <nav class="drawer-content">
+            <ul class="drawer-list">
+                <li class="drawer-item">
+                    <a href="https://oream.github.io/2021Fes/">　トップページ</a>
+                </li>
+                <li class="drawer-item">
+                    <a href="https://oream.github.io/2021Fes-Gallery/">　ギャラリー</a>
+                </li><!-- /.drawer-item -->
+                <li class="drawer-item">
+                    <a href="https://oream.github.io/2021Fes-quiz/">　展開図クイズ</a>
+                </li><!-- /.drawer-item -->
+                <li class="drawer-item">
+                    <a href="https://oream.github.io/2021Fes-try/">　折ってみよう！</a>
+                </li>
+                <li class="drawer-item">
+                    <a href="https://oream.github.io/2021Fes-movie/">　動画コンテンツ</a>
+                </li>
+                <li class="drawer-item">
+                    <a href="https://oream.github.io/2021Fes-members/">　会員紹介</a>
+                </li><!-- /.drawer-item -->
+                <li class="drawer-item">
+                    <a href="https://oream.github.io/2021Fes-contact">　ご意見・ご要望</a>
+                </li>
+            </ul><!-- /.drawer-list -->
+        </nav>
+    </div>
+</header>
+
+<body>
+    <div id="loader_wrap">
+        <div class="loader"></div>
+    </div>
+    <img src="clane1.jpg" alt="" width="100%">
+    <div class="detail">
+        <h2>小動物</h2>
+        <p>
+            ◆Oream◇の会員が折った小動物たちです。
+        </p>
+    </div>
+    <div class="container">
+      <!-- 以下 template
+        <div class="view">
+            <p><img src="作品の写真ファイル" alt=""></p> 
+            <p>
+                「作品名」（出典：「書籍名」）
+            </p>     
+        </div>
+       -->
+    </div>
+    <footer>
+        <p>&copy; ◆Oream◇ 2021</p>
+    </footer>
+</body></html>
