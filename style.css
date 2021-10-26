@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: antiquewhite;
+}
+header {
+    position: fixed;
+    width:100%
+}
+.logo a{
+    font-size: 24px;
+    color:black;
+    display:block;
+    text-decoration: none;
+    padding: 10px;
+    transition:0.5s;
+    background-color: antiquewhite;
+}
+.logo a:hover{
+    background-color: darksalmon;
+}
+/*------------------------------
+
+ここから下がハンバーガーメニュー
+に関するCSS
+
+------------------------------*/
+
+/* チェックボックスは非表示に */
+.drawer-hidden {
+    display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer-open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上に */
+    cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.5s;
+    position: absolute;
+}
+
+/* 三本線のうち一番上の棒の位置調整 */
+.drawer-open span:before {
+    bottom: 8px;
+}
+
+/* 三本線のうち一番下の棒の位置調整 */
+.drawer-open span:after {
+    top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer-check:checked ~ .drawer-open span {
+    background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer-check:checked ~ .drawer-open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#drawer-check:checked ~ .drawer-open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+header nav {
+    overflow: hidden;
+    margin-bottom:30px;
+}    
+header nav li{
+    list-style-type: none;
+}
+header nav ul{
+    padding:0;
+}
+header nav a{
+    color:black;
+    display:block;
+    text-decoration: none;
+    padding: 10px;
+    transition:0.5s;
+}
+header nav a:hover{
+    background-color: darksalmon;
+}
+/* メニューのデザイン*/
+.drawer-content {
+    width: 100%;
+    position: fixed;
+    top: -100%;
+    left: 0;/* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background-color: antiquewhite;
+    transition: .5s;
+}
+.drawer-content li{
+    width: 100%;
+    margin:auto;
+    margin-left:0;
+}
+/* アイコンがクリックされたらメニューを表示 */
+#drawer-check:checked ~ .drawer-content {
+    top: 0;/* メニューを画面に入れる */
+}
+.copyright {
+    text-align: center;
+}
+
+.detail{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+h2 {
+    padding: 1rem 2rem;
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+}
+footer {
+    text-align: center;
+    background-color: antiquewhite;
+    padding:10px;
+}
+.view {
+    display: block;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+}
+.view img {
+    max-width: 100%;
+    height:auto;
+}
+.view p{
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content:space-around;
+    align-content:space-around;
+}
+/* 画面全体の設定 */
+#loader_wrap {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background: #fff;
+}
+/* ローディングアニメーションの設定 */
+.loader,
+.loader:before,
+.loader:after {
+    background: #cd9751;
+    -webkit-animation: load1 1s infinite ease-in-out;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+}
+.loader {
+    color: #cd9751;
+    text-indent: -9999em;
+    margin: 88px auto;
+    position: relative;
+    font-size: 11px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+    position: absolute;
+    top: 0;
+    content: '';
+}
+.loader:before {
+    left: -1.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.loader:after {
+    left: 1.5em;
+}
+@-webkit-keyframes load1 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+@keyframes load1 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+/* ローディング終了後 */
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
